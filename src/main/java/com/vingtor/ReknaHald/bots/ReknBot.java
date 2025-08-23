@@ -1,7 +1,6 @@
 package com.vingtor.ReknaHald.bots;
 
-import com.vingtor.ReknaHald.utilities.botTexts;
-import com.vingtor.ReknaHald.validator.telegramRequestProcessor;
+import com.vingtor.ReknaHald.processor.telegramRequestProcessor;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

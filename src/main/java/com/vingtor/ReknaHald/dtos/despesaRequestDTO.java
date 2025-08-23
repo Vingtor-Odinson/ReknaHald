@@ -1,5 +1,6 @@
 package com.vingtor.ReknaHald.dtos;
 
+import com.vingtor.ReknaHald.enums.tipoDespesaEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class despesaRequestDTO {
-    private String type;
+    private Long chatId;
+    private tipoDespesaEnum type;
     private String local;
     private double value;
 }
