@@ -8,11 +8,19 @@ public class botTexts {
 
     static public String addDespesaKey = "/despesa";
 
+    static public String addUserKey = "/usuario";
 
-    static public String startText = "Olá, bem vindo ao Rekn, seu bot de controle financeiro!\n\nPara ajuda, utilize /ajuda.";
+
+
+    static public String startText = "Olá, bem vindo ao Rekn, seu bot de controle financeiro!\n\nPara iniciar, por favor, utilize /usuario seu-nome para cadastrar seu usuário\n\nPara ajuda, utilize /ajuda.";
 
     static public String helpText = "Utilize o comando /despesa para adicionar uma despesa.\n Sintaxe: /despesa tipo onde valor \n Exemplo: /despesa comida padaria 13,50" +
+            "\n\n Utilize o comando /usuario para adicionar seu usuario.\n Sintaxe: /usuario nome\n Exemplo: /usuario José" +
             "\n\nPara ajuda, utilize /ajuda.";
+
+
+
+    static public String userInsertSuccess = "Usuario cadastrado";
 
     static public String despesaInsertSuccess = "Despesa cadastrada";
 

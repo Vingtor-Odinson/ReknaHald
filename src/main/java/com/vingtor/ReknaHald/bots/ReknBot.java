@@ -48,12 +48,12 @@ public class ReknBot extends TelegramLongPollingBot {
 
         String message = update.getMessage().getText();
         String[] request = message.split(" ");
-        long chatId = update.getMessage().getChatId();
+        Long chatId = update.getMessage().getChatId();
 
         String reply;
 
         try {
-            reply = processor.processRequest(request);
+            reply = processor.processRequest(chatId, request);
         } catch (Exception e) {
             reply = e.getMessage();
             e.printStackTrace();
