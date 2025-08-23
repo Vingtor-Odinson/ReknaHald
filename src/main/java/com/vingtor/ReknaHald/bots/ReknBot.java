@@ -16,8 +16,13 @@ import java.util.List;
 public class ReknBot extends TelegramLongPollingBot {
 
     private String token = "8218651761:AAELz3Fr-UnblF7sxUwxqhhdU3xxMBvBHro";
-
     private String username = "FinancesControllBot";
+
+    private telegramRequestProcessor processor;
+
+    public ReknBot(telegramRequestProcessor processor) {
+        this.processor = processor;
+    }
 
     @PostConstruct
     public void init() {
@@ -44,8 +49,6 @@ public class ReknBot extends TelegramLongPollingBot {
         String message = update.getMessage().getText();
         String[] request = message.split(" ");
         long chatId = update.getMessage().getChatId();
-
-        telegramRequestProcessor processor = new telegramRequestProcessor();
 
         String reply;
 

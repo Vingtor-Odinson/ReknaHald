@@ -1,10 +1,17 @@
 package com.vingtor.ReknaHald.processor;
 
 import com.vingtor.ReknaHald.utilities.botTexts;
+import org.apache.catalina.core.ApplicationContext;
+import org.springframework.stereotype.Component;
 
+@Component
 public class telegramRequestProcessor {
 
-    private Processor processor;
+    private despesaProcessor processor;
+
+    public telegramRequestProcessor(despesaProcessor processor) {
+        this.processor = processor;
+    }
 
     public String processRequest(String[] request) {
 
@@ -20,7 +27,6 @@ public class telegramRequestProcessor {
 
             if(request.length == 4) {
                 try {
-                    processor = new despesaProcessor();
                     processor.process(request);
 
                     return botTexts.despesaInsertSuccess;
