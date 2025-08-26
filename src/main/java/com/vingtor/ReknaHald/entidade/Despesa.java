@@ -28,8 +28,9 @@ public class Despesa {
     @Column(name = "value")
     private double value;
 
-    @Column(name = "chatId")
-    private Long chatId;
+    @ManyToOne
+    @JoinColumn(name = "chat_id", referencedColumnName = "chatId")
+    private Usuario user;
 
     @Column(name = "date")
     @CreationTimestamp
@@ -38,12 +39,12 @@ public class Despesa {
     public Despesa() {
     }
 
-    public Despesa(UUID despesaId, tipoDespesaEnum type, String local, double value, Long chatId, Instant date) {
+    public Despesa(UUID despesaId, tipoDespesaEnum type, String local, double value, Usuario usuario, Instant date) {
         this.despesaId = despesaId;
         this.type = type;
         this.local = local;
         this.value = value;
-        this.chatId = chatId;
+        this.user = usuario;
         this.date = date;
     }
 }

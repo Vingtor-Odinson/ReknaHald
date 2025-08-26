@@ -6,6 +6,8 @@ import com.vingtor.ReknaHald.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 @Configurable
 public class UsuarioService {
@@ -18,9 +20,9 @@ public class UsuarioService {
 
     public void createUsuario(CreateUsuarioDto dto) {
         var usuario = new Usuario(
-                null,
                 dto.getChatId(),
-                dto.getName()
+                dto.getName(),
+                new ArrayList<>()
         );
 
         usuarioRepository.save(usuario);

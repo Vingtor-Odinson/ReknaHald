@@ -8,9 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class despesaProcessor implements Processor {
 
-    private despesaRequestDTO dto;
-
-    private DespesaService despesaService;
+    private final DespesaService despesaService;
 
     public despesaProcessor(DespesaService despesaService) {
         this.despesaService = despesaService;
@@ -18,7 +16,7 @@ public class despesaProcessor implements Processor {
 
     public void process(Long chatId, String[] request) {
         despesaDtoFactory factory = new despesaDtoFactory();
-        dto = factory.create(chatId, request);
+        despesaRequestDTO dto = factory.create(chatId, request);
 
         despesaService.createDespesa(dto);
     }

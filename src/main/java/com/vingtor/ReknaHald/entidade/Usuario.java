@@ -1,30 +1,29 @@
 package com.vingtor.ReknaHald.entidade;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_users")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-
     @Column(name = "chatId", unique = true)
     private Long chatId;
 
     @Column(name = "name")
     private String name;
 
-    public Usuario(UUID id, Long chatId, String name) {
-        this.id = id;
-        this.chatId = chatId;
-        this.name = name;
-    }
+    @OneToMany(mappedBy = "user")
+    private List<Despesa> despesas;
 }
